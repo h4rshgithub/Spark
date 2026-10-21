@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Core-Java/ExceptionHandling/CustomException/CustomException.iml" filepath="$PROJECT_DIR$/Core-Java/ExceptionHandling/CustomException/CustomException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Core-Java/ExceptionHandling/ExceptionHandling.iml" filepath="$PROJECT_DIR$/Core-Java/ExceptionHandling/ExceptionHandling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThreading/MultiThreading.iml" filepath="$PROJECT_DIR$/MultiThreading/MultiThreading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Core-Java/Oops/Oops.iml" filepath="$PROJECT_DIR$/Core-Java/Oops/Oops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spark.iml" filepath="$PROJECT_DIR$/Spark.iml" />
+    </modules>
+  </component>
+</project>

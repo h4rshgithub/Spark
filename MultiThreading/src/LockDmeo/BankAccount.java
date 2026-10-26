@@ -19,9 +19,8 @@ public class BankAccount {
                 System.out.println("Insufficient Balance ");
 
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }finally {
+        }
+        finally {
             rl.unlock();
         }
 

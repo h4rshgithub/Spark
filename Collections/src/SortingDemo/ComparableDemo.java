@@ -34,6 +34,6 @@ public class ComparableDemo {
         System.out.println(list);
         Collections.sort(list , new EmployeeDemo());
         System.out.println(list);
-
+        System.out.println();
     }
 }

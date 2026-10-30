@@ -70,6 +70,8 @@ public class Train {
         return  false;
     }
 
+
+
     public void  cancelSeats(int cnt ){
         avalSeats = avalSeats +cnt ;
 //        System.out.println(cnt + " seats cancelled successfully refund intiated :)");
@@ -77,7 +79,7 @@ public class Train {
 
     @Override
     public String toString() {
-        return number + " | "+ name+ " | "+ src + " --> "+ dest + " Seats Available : " + avalSeats;
+        return number + " | "+ name+ " | "+ src + " --> "+ dest + " | " + " Available : " + avalSeats;
 
     }
 }

@@ -14,6 +14,7 @@ public class UserService {
         User user = new User(username , password , fullName , contact);
         userMap.put(username , user);
         System.out.println(" User "+ username + " registered successfully :)");
+
         return true;
     }
     public boolean loginUser(String username , String password){

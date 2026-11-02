@@ -15,7 +15,7 @@ public class JDBCDemo {
             System.out.println("DB connection established ");
 
              Statement statement = con.createStatement();
-            String query = "select * from student";
+            String query = "select * from student" ;
             ResultSet rs = statement.executeQuery(query);
             //ResultSet is a JDBC interface that represents the data returned by a SELECT query.
 

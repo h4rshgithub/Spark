@@ -10,6 +10,9 @@ public class Customer {
         this.name = name;
         this.phone = phone;
     }
+    public Customer(){
+
+    }
 
     public int getId() {
         return id;

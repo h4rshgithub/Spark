@@ -12,7 +12,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         BillingService billingService = new BillingService();
         while (true){
-            System.out.println("1. Add Customer \n 2. Generate ivoice \n 3. Show invoice \n 4. Exit");
+            System.out.println(" 1. Add Customer with vehicle  \n 2. Generate ivoice \n 3. Show invoice \n 4. Exit");
             int choice = sc.nextInt();
             switch(choice){
                 case 1 :
@@ -20,7 +20,16 @@ public class App {
                     String name = sc.next();
                     System.out.print("Customer Phone no. : ");
                     String phone = sc.next();
-                    customerService.addCustomer(new Customer(0 , name , phone));
+                    service.CustomerService.addCustomer(new Customer(0 , name , phone));
+                    System.out.print("Enter Vehicle  Number : ");
+                    String number = sc.next();
+                    System.out.print("Enter Vehicle  Model : ");
+                    String model = sc.next();
+                    Customer customerBasedonNum = service.CustomerService.getCustomerBasedOnPhone(phone);
+                    service.VehicleService.addVehicle(customerBasedonNum , number , model);
+
+
+
                     break;
                 case 2 :
                     System.out.print("Enter customer id : ");

@@ -35,10 +35,16 @@ CREATE TABLE invoices(
     service_id int ,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY  (customer_id) REFERENCES customer(id),
-    FOREIGN KEY  (vehicle_id) REFERENCES vehicles(id),
-    FOREIGN KEY  (service_id) REFERENCES services(id)
-
-)
+    FOREIGN KEY  (vehicle_id) REFERENCES vehicles(id)
 
 
+);
+USE garage;
+
+ALTER TABLE invoices
+  DROP FOREIGN KEY invoices_ibfk_3;   -- removes the FK on service_id
+
+ALTER TABLE invoices
+  MODIFY COLUMN service_id VARCHAR(50); -- changes INT → VARCHAR
+DESCRIBE invoices;
 

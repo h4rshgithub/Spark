@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tribes - The Tomcat Cluster Communication Module (11.0.27) - Apache Tribes - Status</title></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="../images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="../images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tribes - The Tomcat Cluster Communication Module</h1><div class="versionInfo">
+            Version 11.0.27,
+            <time datetime="2026-10-06">Oct 6 2026</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="../index.html">Docs Home</a></li><li><a href="introduction.html">Tribes Docs Home</a></li><li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>User Guide</h2><ul><li><a href="introduction.html">1) Introduction</a></li><li><a href="setup.html">2) Setup</a></li><li><a href="faq.html">3) FAQ</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="../api/org/apache/catalina/tribes/package-summary.html">JavaDoc</a></li></ul></div><div><h2>Apache Tribes Development</h2><ul><li><a href="membership.html">Membership</a></li><li><a href="transport.html">Transport</a></li><li><a href="interceptors.html">Interceptors</a></li><li><a href="status.html">Status</a></li><li><a href="developers.html">Developers</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>Apache Tribes - Status</h2><h3 id="Status">Status</h3><div class="text">
+  <p>Tribes exposes the state of a running channel through JMX. Use a JMX
+     client to inspect the channel and its components. See the
+     <a href="../monitoring.html">Tomcat monitoring documentation</a> for
+     ways to connect a JMX client.</p>
+
+  <p>The channel's <code>jmxEnabled</code> attribute controls registration and
+     defaults to <code>true</code>. The default JMX domain is
+     <code>ClusterChannel</code>; <code>jmxDomain</code> and
+     <code>jmxPrefix</code> can change the object names. Each object name
+     includes <code>type=Channel</code>, the channel name, and a
+     <code>component</code> property. A channel must have a name for its
+     components to register. See the
+     <a href="../config/cluster-channel.html">channel configuration</a> for
+     these attributes.</p>
+</div><h3 id="Membership">Membership</h3><div class="text">
+  <p>The <code>component=Membership</code> MBean exposes the the members known
+     to this node. Multicast, static, and cloud membership services expose
+     <code>hasMembers</code> and <code>getMembersByName</code>. A single node
+     cluster has no remote members.</p>
+</div><h3 id="Message_transport">Message transport</h3><div class="text">
+  <p>The <code>component=Receiver</code> MBean for an NIO receiver exposes
+     <code>Listening</code>, <code>ActiveCount</code>, and
+     <code>PoolSize</code>. The <code>component=Sender</code> MBean exposes
+     properties of the configured sender.</p>
+
+  <p>If a <code>ThroughputInterceptor</code> is configured, its
+     <code>component=Interceptor</code> MBean exposes transmitted and received
+     message counts and transmit errors. A
+     <code>MessageDispatchInterceptor</code> exposes <code>CurrentSize</code>
+     and worker counts for its asynchronous send queue. Interceptor MBeans are
+     present only for configured interceptors.</p>
+</div><h3 id="Session_replication">Session replication</h3><div class="text">
+  <p>When Tribes is used by a Tomcat cluster, the session manager provides
+     additional replication statistics. For example, a
+     <code>DeltaManager</code> with statistics enabled exposes counters for
+     sent and received session events and state transfers. These are manager
+     statistics, separate from the channel component MBeans. See the
+     <a href="../config/cluster-manager.html">cluster manager
+     configuration</a> for the <code>enableStatistics</code> attribute.</p>
+</div></div></div></div></div><footer><div id="footer">
+    Copyright &copy; 1999-2026, The Apache Software Foundation
+    <br>
+    Apache Tomcat, Tomcat, Apache, the Apache Tomcat logo and the Apache logo
+    are either registered trademarks or trademarks of the Apache Software
+    Foundation.
+    </div></footer></div></body></html>
